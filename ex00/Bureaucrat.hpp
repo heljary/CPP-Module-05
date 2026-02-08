@@ -10,6 +10,9 @@ class Bureaucrat
     public:
         Bureaucrat();
         Bureaucrat(std::string name, int grade);
+        Bureaucrat(const Bureaucrat& oth);
+        Bureaucrat& operator=(const Bureaucrat& oth);
+        std::ostream& operator<<(std::ostream& out,const Bureaucrat& oth);
         std::string getName() const;
         int getGrade() const;
         void incrementGrade();
