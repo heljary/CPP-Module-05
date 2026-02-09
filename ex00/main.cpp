@@ -2,6 +2,14 @@
 
 int main()
 {
-    Bureaucrat brc1;
-    Bureaucrat brc2("hamza",89);
+    try
+    {        
+        Bureaucrat brc2("hamza",1);
+        std::cout << brc2 << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
