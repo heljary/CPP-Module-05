@@ -4,7 +4,7 @@
 /*---------------HAMZA ELJARY-------------------------*/
 
 Bureaucrat::Bureaucrat() : name("default"), grade(150) {
-    std::cout << "Default Constructor Called!" << std::endl;
+    std::cout << "Default Constructor Bureacrat Called!" << std::endl;
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
@@ -17,7 +17,6 @@ Bureaucrat::Bureaucrat(std::string nm, int gd) : name(nm)
         throw GradeTooHighException();
     else
         this->grade = gd;
-    std::cout << "Constructor paramitersed is called !" << std::endl;
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
