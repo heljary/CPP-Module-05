@@ -1,7 +1,8 @@
 #include "Form.hpp"
 
 Form::Form():name("default"),grade_s(false),grade_ex(false){
-    std::cout << "From => Default Constructer is Called !" << std::endl;
+    	std::cout << "From => Default Constructer is Called !" << std::endl;
+	this->sign = true;
 }
 
 
@@ -36,7 +37,7 @@ bool Form::getSign() const
 
 std::ostream& operator<<(std::ostream& out,const Form& of)
 {
-	out << of.name << of.sign << of.grade_s << of.grade_ex;
+	out << of.getName()<< " " << of.getSign() << " " << of.getGradeIsSign() << " " << of.getGradeIsExecute();
 	return out;
 }
 
