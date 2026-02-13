@@ -26,7 +26,7 @@ class Form{
         bool getSign() const;
         int getGradeIsSign() const;
         int getGradeIsExecute() const;
-        void beSigned(Bureaucrat br);
+        void beSigned(Bureaucrat& br);
         void signForm();
 };
 

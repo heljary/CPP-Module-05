@@ -2,7 +2,7 @@
 
 Form::Form():name("default"),grade_s(false),grade_ex(false){
     	std::cout << "From => Default Constructer is Called !" << std::endl;
-	this->sign = true;
+	this->sign = false;
 }
 
 
@@ -49,11 +49,14 @@ int Form::getGradeIsExecute() const{
     return this->grade_ex;
 }
 
-void Form::beSigned(Bureaucrat br)
+void Form::beSigned(Bureaucrat& br)
 {
+    std::cout << "Im here in besigned " << std::endl;
     if(this->grade_s >= br.getGrade())
     {
         std::cout << "is not signed yet" << std::endl;
+    }else{
+	throw	GradeTooLowException();
     }
 }
 
@@ -62,4 +65,12 @@ void Form::signForm(){
     // {
         // if()
     // }
+}
+
+const char* Form::GradeTooLowException::what() const throw(){
+	return "Grade Too Low !";
+}
+
+const char* Form::GradeTooHighException::what() const throw(){
+	return "Grade Too Hight !";
 }
