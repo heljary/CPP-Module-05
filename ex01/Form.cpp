@@ -1,6 +1,7 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-Form::Form():name("default"),grade_s(false),grade_ex(false){
+Form::Form():name("default"),grade_s(1),grade_ex(1){
     	std::cout << "From => Default Constructer is Called !" << std::endl;
 	this->sign = false;
 }
@@ -49,22 +50,15 @@ int Form::getGradeIsExecute() const{
     return this->grade_ex;
 }
 
-void Form::beSigned(Bureaucrat& br)
+void Form::beSigned(const Bureaucrat& br)
 {
-    std::cout << "Im here in besigned " << std::endl;
     if(this->grade_s >= br.getGrade())
     {
-        std::cout << "is not signed yet" << std::endl;
+	this->sign = true;
+        std::cout << this->sign << std::endl;
     }else{
 	throw	GradeTooLowException();
     }
-}
-
-void Form::signForm(){
-    // if()
-    // {
-        // if()
-    // }
 }
 
 const char* Form::GradeTooLowException::what() const throw(){

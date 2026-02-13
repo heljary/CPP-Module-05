@@ -1,6 +1,5 @@
 #ifndef FORM_HPP
 #define FORM_HPP
-
 #include "Bureaucrat.hpp"
 
 class Form{
@@ -26,8 +25,7 @@ class Form{
         bool getSign() const;
         int getGradeIsSign() const;
         int getGradeIsExecute() const;
-        void beSigned(Bureaucrat& br);
-        void signForm();
+        void beSigned(const Bureaucrat& br);
 };
 
 std::ostream& operator<<(std::ostream& out, const Form& of);
