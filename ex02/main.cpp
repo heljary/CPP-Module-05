@@ -3,7 +3,7 @@
 
 int main()
 {
-	Bureaucrat  brc1("yassine",2);
+	Bureaucrat  brc1("GB05",2);
 	Bureaucrat brc2("hamza",1);
 	Form fr1;
 	//try

@@ -1,18 +1,18 @@
 //#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form():name("Messi"),grade_s(1),grade_ex(1){
+AForm::AForm():name("Messi"),grade_s(1),grade_ex(1){
     	std::cout << "From => Default Constructer is Called !" << std::endl;
 	this->sign = false;
 }
 
 
-Form::Form(const Form& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
+AForm::AForm(const Form& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
     std::cout << "Form => Copy Constructer is Called !" << std::endl;
     this->sign = form.sign;
 }
 
-Form& Form::operator=(const Form& frm){
+AForm& AForm::operator=(const AForm& frm){
     std::cout << "Form => Copy assignment operator Called !" << std::endl;
     if(this != &frm)
     {
@@ -22,35 +22,34 @@ Form& Form::operator=(const Form& frm){
 }
 
 
-
-Form::~Form(){
-    std::cout << "Form => Deconstructor Called !" << std::endl;
+AForm::~AForm(){
+    std::cout << "AForm => Deconstructor Called !" << std::endl;
 }
 
-std::string Form::getName() const {
+std::string AForm::getName() const {
     return this->name;
 }
 
-bool Form::getSign() const
+bool AForm::getSign() const
 {
     return this->sign;
 }
 
-std::ostream& operator<<(std::ostream& out,const Form& of)
+std::ostream& operator<<(std::ostream& out,const AForm& of)
 {
 	out << of.getName()<< " " << of.getSign() << " " << of.getGradeIsSign() << " " << of.getGradeIsExecute();
 	return out;
 }
 
-int Form::getGradeIsSign() const {
+int AForm::getGradeIsSign() const {
     return this->grade_s;
 }
 
-int Form::getGradeIsExecute() const{
+int AForm::getGradeIsExecute() const{
     return this->grade_ex;
 }
 
-int Form::beSigned(Bureaucrat& br)
+int AForm::beSigned(Bureaucrat& br)
 {
     if(this->grade_s >= br.getGrade())
     {
@@ -61,10 +60,10 @@ int Form::beSigned(Bureaucrat& br)
     }
 }
 
-const char* Form::GradeTooLowException::what() const throw(){
+const char* AForm::GradeTooLowException::what() const throw(){
 	return "Grade Too Low !";
 }
 
-const char* Form::GradeTooHighException::what() const throw(){
+const char* AForm::GradeTooHighException::what() const throw(){
 	return "Grade Too Hight !";
 }

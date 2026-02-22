@@ -4,17 +4,17 @@
 
 class Bureaucrat;
 
-class Form{
+class AForm{
     private:
         const std::string name;
         bool sign;
         const int grade_s;
         const int grade_ex;
     public:
-        Form();
-        Form(const Form& form);
-        Form& operator=(const Form& frm);
-        ~Form();
+       AForm();
+       AForm(const Form& form);
+       AForm& operator=(const Form& frm);
+       ~AForm();
         class GradeTooHighException:public std::exception{
             public:
                 const char* what() const throw();
