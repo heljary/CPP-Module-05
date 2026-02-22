@@ -7,10 +7,21 @@ Form::Form():name("Messi"),grade_s(1),grade_ex(1){
 }
 
 
-Form::Form(const Form& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
+Form::Form(const Form& form): name(form.name), grade_s(form.grade_s),grade_ex(form.grade_ex){
     std::cout << "Form => Copy Constructer is Called !" << std::endl;
     this->sign = form.sign;
 }
+
+Form::Form(const std::string& name, const int gradeToSign, const int gradeToExec): name(name), grade_s(gradeToSign), grade_ex(gradeToExec)
+{
+    if (gradeToExec > 150 || gradeToSign > 150)
+        throw GradeTooLowException();
+    else if (gradeToExec < 1 || gradeToSign < 1)
+        throw GradeTooHighException();
+    else
+        std::cout << "Parametred Form Constructor Called !" << std::endl;
+}
+
 
 Form& Form::operator=(const Form& frm){
     std::cout << "Form => Copy assignment operator Called !" << std::endl;
