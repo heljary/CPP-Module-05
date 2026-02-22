@@ -100,15 +100,10 @@ Bureaucrat::~Bureaucrat()
 
 
 void Bureaucrat::signedForm(Form& fr){
-	//if(fr.beSigned(*this))
-	//{
-	  // std::cout << this->name << " is signed " << fr.getName() << std::endl;
-	//}else{
-       	  // std::cout << this->name << " couldn’t sign " << fr.getName() << " because " << fr.what() << std::endl;
-	//}
-	try{
+	try
+    {
 		fr.beSigned(*this);
-		std::cout << this->name << " is signed " << fr.getName() << std::endl;
+		std::cout << this->name << " signed " << fr.getName() << std::endl;
 	}catch(const Form::GradeTooLowException& e){
 		std::cout << this->name << " couldn't sign " << fr.getName() << " because " << e.what() << std::endl;
 	}
