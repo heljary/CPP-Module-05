@@ -18,7 +18,7 @@ AForm& AForm::operator=(const AForm& frm){
     {
         this->sign = frm.sign;
     }
-     return *this;
+    return *this;
 }
 
 
