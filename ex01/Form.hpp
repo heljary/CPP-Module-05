@@ -12,6 +12,7 @@ class Form{
         const int grade_ex;
     public:
         Form();
+        Form(const std::string& name, const int gradeToSign, const int gradeToExec);
         Form(const Form& form);
         Form& operator=(const Form& frm);
         ~Form();
