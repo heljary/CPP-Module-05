@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(std::string nm, int gd) : name(nm)
 
 /*---------------HAMZA ELJARY-------------------------*/
 
-Bureaucrat::Bureaucrat(const Bureaucrat& oth){
+Bureaucrat::Bureaucrat(const Bureaucrat& oth) : name(oth.getName()) {
     std::cout << "Copy Constructor Called !" << std::endl;
     grade = oth.grade;
 }
@@ -42,7 +42,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& oth){
 
 
 std::ostream& operator<<(std::ostream& out,const Bureaucrat& oth){
-    out << oth.getName() << ", bureaucrat grade " << oth.getGrade();
+    out << oth.getName() << ", bureaucrat grade " << oth.getGrade() << '\n';
     return out;
 }
 
@@ -61,35 +61,35 @@ int Bureaucrat::getGrade() const{
 /*---------------HAMZA ELJARY-------------------------*/
 
 void Bureaucrat::incrementGrade(){
-    grade--;
-    if(this->grade < 1)
+    if(this->grade == 1)
     {
         throw Bureaucrat::GradeTooHighException();
     }
+    grade--;
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
 
 void Bureaucrat::decrementGrade()
 {
-    grade++;
-    if(this->grade > 150)
+    if(this->grade == 150)
     {
         throw Bureaucrat::GradeTooLowException();
     }
+    grade++;
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
 
 
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
-    return "Grade to hight !";
+    return "Grade to hight !\n";
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
 
 const char* Bureaucrat::GradeTooLowException::what() const throw(){
-    return "Grade to Low !";
+    return "Grade to Low !\n";
 }
 
 /*---------------HAMZA ELJARY-------------------------*/
