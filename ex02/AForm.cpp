@@ -7,7 +7,7 @@ AForm::AForm():name("Messi"),grade_s(1),grade_ex(1){
 }
 
 
-AForm::AForm(const Form& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
+AForm::AForm(const AForm& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
     std::cout << "Form => Copy Constructer is Called !" << std::endl;
     this->sign = form.sign;
 }

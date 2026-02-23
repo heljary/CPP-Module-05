@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /*---------------HAMZA ELJARY-------------------------*/
 
@@ -99,7 +99,7 @@ Bureaucrat::~Bureaucrat()
 }
 
 
-void Bureaucrat::signedForm(Form& fr){
+void Bureaucrat::signedForm(AForm& fr){
 	//if(fr.beSigned(*this))
 	//{
 	  // std::cout << this->name << " is signed " << fr.getName() << std::endl;
@@ -109,7 +109,7 @@ void Bureaucrat::signedForm(Form& fr){
 	try{
 		fr.beSigned(*this);
 		std::cout << this->name << " is signed " << fr.getName() << std::endl;
-	}catch(const Form::GradeTooLowException& e){
+	}catch(const AForm::GradeTooLowException& e){
 		std::cout << this->name << " couldn't sign " << fr.getName() << " because " << e.what() << std::endl;
 	}
 }

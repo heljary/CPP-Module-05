@@ -13,8 +13,8 @@ class AForm{
     public:
        AForm();
        AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
-       AForm(const Form& form);
-       AForm& operator=(const Form& frm);
+       AForm(const AForm& form);
+       AForm& operator=(const AForm& frm);
        ~AForm();
         class GradeTooHighException:public std::exception{
             public:
@@ -30,9 +30,9 @@ class AForm{
         int getGradeIsExecute() const;
         int beSigned(Bureaucrat& br);
         void execute(Bureaucrat const & executor) const;
-        void ft_action() const = 0;
+        virtual void ft_action() const = 0;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& of);
+std::ostream& operator<<(std::ostream& out, const AForm& of);
 
 #endif

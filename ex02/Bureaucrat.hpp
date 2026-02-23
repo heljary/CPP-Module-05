@@ -2,9 +2,9 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -30,7 +30,7 @@ class Bureaucrat
             public:
                 const char* what() const throw();
         };
-	void  signedForm(Form& fr);
+	    void  signedForm(AForm& fr);
 };
 std::ostream& operator<<(std::ostream& out,const Bureaucrat& oth);
 #endif

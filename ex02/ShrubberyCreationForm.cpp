@@ -6,7 +6,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm",1
 
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target): AForm("ShrubberyCreationForm",145,137), target(target){
-    std::cout << "ShrubberyCreationForm parameterized constructor is called !" std::endl;
+    std::cout << "ShrubberyCreationForm parameterized constructor is called !" << std::endl;
 };
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& scf) : AForm(scf),target(scf.target){
@@ -24,5 +24,14 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
     std::cout << "ShrubberyCreationForm deconstructor is called !" << std::endl;
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const& execute) const
+{
+    // ft_action();
+}
+
+void ShrubberyCreationForm::ft_action() const{
+    ofstream file(target + "_shrubbery");
 }
 
