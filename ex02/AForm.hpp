@@ -12,6 +12,7 @@ class AForm{
         const int grade_ex;
     public:
        AForm();
+       AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
        AForm(const Form& form);
        AForm& operator=(const Form& frm);
        ~AForm();
