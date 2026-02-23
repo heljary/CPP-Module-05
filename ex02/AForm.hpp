@@ -29,7 +29,8 @@ class AForm{
         int getGradeIsSign() const;
         int getGradeIsExecute() const;
         int beSigned(Bureaucrat& br);
-        void execute(Bureaucrat const & executor) const = 0;
+        void execute(Bureaucrat const & executor) const;
+        void ft_action() = 0;
 };
 
 std::ostream& operator<<(std::ostream& out, const Form& of);
