@@ -1,4 +1,4 @@
-#ifndef ROBOTOMYREQUESTFORM_HPP
+#ifndef c
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
