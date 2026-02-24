@@ -1,11 +1,11 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm",25,5), target("default_target"){
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm",72,45), target("default_target"){
     std::cout << "RobotomyRequestForm defualt constructor is called !" << std::endl;
 };
 
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target): AForm("RobotomyRequestForm",145,137), target(target){
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target): AForm("RobotomyRequestForm",72,45), target(target){
     std::cout << "RobotomyRequestForm parameterized constructor is called !" << std::endl;
 };
 
@@ -27,6 +27,12 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 }
 
 void RobotomyRequestForm::ft_action() const{
-    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << this->target << " Drilling noises: Woooooooooo! " << std::endl;
+    if(rand() % 2 == 0)
+    {
+        
+    }else{
+
+    }
 }
 
