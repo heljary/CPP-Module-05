@@ -4,6 +4,7 @@
 
 int main() {
     try {
+		std::srand(time(NULL));
         Bureaucrat boss("Hamza", 1);
         Bureaucrat mid("Salah", 140);
         Bureaucrat low("Stagiaire", 150);
