@@ -24,7 +24,7 @@ AForm* Intern::makeForm(const std::string n_Form,const std::string _target)
         "shrubbery creation","robotomy request","presidential pardon",
     };
 
-    while(arrfunc[i] != n_Form)
+    while(i < 3 && arrfunc[i] != n_Form)
     {
         i++;
     }
