@@ -19,6 +19,14 @@ Intern::~Intern(){
 
 AForm* Intern::makeForm(const std::string n_Form,const std::string _target)
 {
+    int i = 0;
+    std::string arrfunc[]{
+        "shrubbery creation","robotomy request","presidential pardon",
+    };
 
+    while(arrfunc[i] != n_Form)
+    {
+        i++;
+    }
 }
 
