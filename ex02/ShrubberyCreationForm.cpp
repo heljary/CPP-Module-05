@@ -32,6 +32,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const& execute) const
 }
 
 void ShrubberyCreationForm::ft_action() const{
-    ofstream file(target + "_shrubbery");
+    std::ofstream file(target + "_shrubbery");
 }
 
