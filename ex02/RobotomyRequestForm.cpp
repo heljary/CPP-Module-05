@@ -27,20 +27,6 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 void PresidentialPardonForm::ft_action() const{
-    std::ofstream file((target + "_shrubbery").c_str());
-    if(file.is_open()){
-        file << "       /\\ " << std::endl;
-        file << "      /\\*\\ " << std::endl;
-        file << "     /\\O\\*\\ " << std::endl;
-        file << "    /*/*\\/*\\/*\\ " << std::endl;
-        file << "   /\\O\\/0\\0\\/0\\ " << std::endl;
-        file << "  /\\*\\/\\*\\/\\/\\ " << std::endl;
-        file << " /\\O\\/\\/*\\/\\/O/\\ " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "      ||      " << std::endl;
-        file << "----HAMZA------" << std::endl;
-        file.close();
-    }
+    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 
