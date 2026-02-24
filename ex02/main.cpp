@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main() {
     try {
@@ -7,7 +8,7 @@ int main() {
         Bureaucrat mid("Salah", 140);
         Bureaucrat low("Stagiaire", 150);
 
-        ShrubberyCreationForm s1("home");
+        RobotomyRequestForm s1("home");
 
         std::cout << "--- Test 1: Executing without signature ---" << std::endl;
         boss.executeForm(s1); // Fail: Not signed
