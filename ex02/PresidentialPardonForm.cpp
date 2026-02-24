@@ -5,7 +5,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 };
 
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target): AForm("PresidentialPardonForm",145,137), target(target){
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target): AForm("PresidentialPardonForm",25,5), target(target){
     std::cout << "PresidentialPardonForm parameterized constructor is called !" << std::endl;
 };
 
