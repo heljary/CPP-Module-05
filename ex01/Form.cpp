@@ -61,11 +61,12 @@ int Form::getGradeIsExecute() const{
     return this->grade_ex;
 }
 
-void Form::beSigned(Bureaucrat& br)
+int Form::beSigned(Bureaucrat& br)
 {
-    if(br->getGrade() > grade_s)
+    if(br.getGrade() > grade_s)
         throw   GradeTooLowException();
 	this->sign = true;
+    return (this->sign);
 }
 
 const char* Form::GradeTooLowException::what() const throw(){
