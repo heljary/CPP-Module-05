@@ -1,16 +1,9 @@
-//#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form():name("Messi"),grade_s(1),grade_ex(1){
-    	std::cout << "From => Default Constructer is Called !" << std::endl;
-	this->sign = false;
-}
+Form::Form():name("Messi"),grade_s(1),grade_ex(1),sign(false){}
 
 
-Form::Form(const Form& form): name(form.name), grade_s(form.grade_s),grade_ex(form.grade_ex){
-    std::cout << "Form => Copy Constructer is Called !" << std::endl;
-    this->sign = form.sign;
-}
+Form::Form(const Form& form): name(form.name), grade_s(form.grade_s),grade_ex(form.grade_ex),sign(form.sign){}
 
 Form::Form(const std::string& name, const int gradeToSign, const int gradeToExec): name(name), grade_s(gradeToSign), grade_ex(gradeToExec), sign(false)
 {
@@ -18,13 +11,10 @@ Form::Form(const std::string& name, const int gradeToSign, const int gradeToExec
         throw GradeTooLowException();
     else if (gradeToExec < 1 || gradeToSign < 1)
         throw GradeTooHighException();
-    else
-        std::cout << "Parametred Form Constructor Called !" << std::endl;
 }
 
 
 Form& Form::operator=(const Form& frm){
-    std::cout << "Form => Copy assignment operator Called !" << std::endl;
     if(this != &frm)
     {
         this->sign = frm.sign;
@@ -34,9 +24,7 @@ Form& Form::operator=(const Form& frm){
 
 
 
-Form::~Form(){
-    std::cout << "Form => Deconstructor Called !" << std::endl;
-}
+Form::~Form(){}
 
 std::string Form::getName() const {
     return this->name;
@@ -63,8 +51,9 @@ int Form::getGradeIsExecute() const{
 
 int Form::beSigned(Bureaucrat& br)
 {
-    if(br.getGrade() > grade_s)
+    if(br.getGrade() > grade_s){
         throw   GradeTooLowException();
+    }
 	this->sign = true;
     return (this->sign);
 }

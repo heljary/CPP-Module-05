@@ -18,13 +18,10 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     {
         this->target = scf.target;
     }
-    std::cout << "ShrubberyCreationForm operator assignment is called !" << std::endl;
     return *this;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(){
-    std::cout << "ShrubberyCreationForm deconstructor is called !" << std::endl;
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::ft_action() const{
     std::ofstream file((target + "_shrubbery").c_str());

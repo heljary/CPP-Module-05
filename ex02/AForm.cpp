@@ -1,23 +1,15 @@
 //#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm():name("Defualt"),grade_s(1),grade_ex(1){
-    	std::cout << "From => Default Constructer is Called !" << std::endl;
-	this->sign = false;
-}
+AForm::AForm():name("Defualt"),grade_s(1),grade_ex(1),sign(false){}
 
 AForm::AForm(const std::string& name, const int gradeToSign, const int gradeToExec) 
     : name(name), sign(false), grade_s(gradeToSign), grade_ex(gradeToExec) {
-    std::cout << "AForm Parameterized Constructor Called!" << std::endl;
 }
 
-AForm::AForm(const AForm& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex){
-    std::cout << "Form => Copy Constructer is Called !" << std::endl;
-    this->sign = form.sign;
-}
+AForm::AForm(const AForm& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex),sign(form.sign){}
 
 AForm& AForm::operator=(const AForm& frm){
-    std::cout << "Form => Copy assignment operator Called !" << std::endl;
     if(this != &frm)
     {
         this->sign = frm.sign;
@@ -26,9 +18,7 @@ AForm& AForm::operator=(const AForm& frm){
 }
 
 
-AForm::~AForm(){
-    std::cout << "AForm => Deconstructor Called !" << std::endl;
-}
+AForm::~AForm(){}
 
 std::string AForm::getName() const {
     return this->name;
@@ -79,5 +69,3 @@ const char* AForm::GradeTooLowException::what() const throw(){
 const char* AForm::GradeTooHighException::what() const throw(){
 	return "Grade Too Hight !";
 }
-
-

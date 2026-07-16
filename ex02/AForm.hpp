@@ -30,7 +30,7 @@ class AForm{
         int getGradeIsSign() const;
         int getGradeIsExecute() const;
         int beSigned(Bureaucrat& br);
-        virtual void execute(Bureaucrat const & executor) const;
+        virtual void execute(Bureaucrat const & executor) const = 0;
         virtual void ft_action() const = 0;
 };
 
