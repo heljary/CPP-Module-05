@@ -4,7 +4,7 @@
 AForm::AForm():name("Defualt"),grade_s(1),grade_ex(1),sign(false){}
 
 AForm::AForm(const std::string& name, const int gradeToSign, const int gradeToExec) 
-    : name(name), sign(false), grade_s(gradeToSign), grade_ex(gradeToExec) {
+    : name(name), grade_s(gradeToSign), grade_ex(gradeToExec), sign(false) {
 }
 
 AForm::AForm(const AForm& form): name(form.name),grade_s(form.grade_s),grade_ex(form.grade_ex),sign(form.sign){}
@@ -55,9 +55,13 @@ int AForm::beSigned(Bureaucrat& br)
 
 void AForm::execute(Bureaucrat const& execute) const
 {
-    if(!this->getSign() || execute.getGrade() > this->getGradeIsExecute())
+    if(!this->getSign())
     {
-        throw AForm::GradeTooLowException();
+        throw FormNotSignedException();
+    } 
+    if(execute.getGrade() > this->getGradeIsExecute())
+    {
+        throw GradeTooLowException();
     }
     this->ft_action();
 }
@@ -68,4 +72,8 @@ const char* AForm::GradeTooLowException::what() const throw(){
 
 const char* AForm::GradeTooHighException::what() const throw(){
 	return "Grade Too Hight !";
+}
+
+const char* AForm::FormNotSignedException::what() const throw(){
+    return "form is not signed";
 }

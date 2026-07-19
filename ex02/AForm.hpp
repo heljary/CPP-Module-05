@@ -8,9 +8,9 @@ class Bureaucrat;
 class AForm{
     private:
         const std::string name;
-        bool sign;
         const int grade_s;
         const int grade_ex;
+        bool sign;
     public:
        AForm();
        AForm(const std::string& name, const int gradeToSign, const int gradeToExec);
@@ -25,12 +25,18 @@ class AForm{
             public:
                 const char* what() const throw();
         };
+
+        class FormNotSignedException: public std::exception{
+            public:
+                const char* what() const throw();
+        };
         std::string getName() const;
         bool getSign() const;
         int getGradeIsSign() const;
         int getGradeIsExecute() const;
         int beSigned(Bureaucrat& br);
-        virtual void execute(Bureaucrat const & executor) const = 0;
+        void execute(Bureaucrat const & executor) const;
+    protected:
         virtual void ft_action() const = 0;
 };
 
