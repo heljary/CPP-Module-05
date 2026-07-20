@@ -5,22 +5,18 @@
 #include "PresidentialPardonForm.hpp"
 
 Intern::Intern(){
-    std::cout << " Default constructor Intern is called " << std::endl;
 }
 
 Intern::Intern(const Intern& other){
     (void)other;
-    std::cout << " Copy constructor Intern is called " << std::endl;
 }
 
 Intern& Intern::operator=(const Intern& other){
     (void)other;
-    std::cout << " Operator Assignment Intern is called " << std::endl;
     return *this;
 }
 
 Intern::~Intern(){
-    std::cout << " Deconstructor Intern is called " << std::endl;
 }
 
 AForm* Intern::createShrubbery(const std::string target) {

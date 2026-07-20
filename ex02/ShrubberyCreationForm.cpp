@@ -19,6 +19,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 void ShrubberyCreationForm::ft_action() const{
     std::ofstream file((target + "_shrubbery").c_str());
+    int fd = file.is_open();
+    std::cout << "fd is " << fd << std::endl;
     if(file.is_open()){
         file << "       /\\ " << std::endl;
         file << "      /\\*\\ " << std::endl;

@@ -47,7 +47,7 @@ int AForm::beSigned(Bureaucrat& br)
 {
     if(br.getGrade() > grade_s)
     {
-        throw   GradeTooLowException();
+        throw GradeTooLowException();
     }
     this->sign = true;
     return (this->sign);
@@ -58,7 +58,7 @@ void AForm::execute(Bureaucrat const& execute) const
     if(!this->getSign())
     {
         throw FormNotSignedException();
-    } 
+    }
     if(execute.getGrade() > this->getGradeIsExecute())
     {
         throw GradeTooLowException();
